@@ -1,4 +1,4 @@
-package PageObjects;
+package Tests;
 
 public class FormsPage {
 }
