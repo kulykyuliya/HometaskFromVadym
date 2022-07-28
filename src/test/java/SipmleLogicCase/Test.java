@@ -1,4 +1,4 @@
-package Tests;
+package SipmleLogicCase;
 
 public class Test {
     public static void main(String[] args) {

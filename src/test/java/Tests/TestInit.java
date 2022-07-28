@@ -5,14 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import java.util.List;
+import java.time.Duration;
 
 public class TestInit {
     public WebDriver driver;
-
 
     @BeforeMethod
     public void setUp() {
@@ -21,24 +22,11 @@ public class TestInit {
     }
 
     public void fullscreen() {
-        driver.manage().window().maximize();
+        driver.manage().window().fullscreen();
     }
 
-    public void openSite() {
-        driver.get("https://demoqa.com/");
-    }
-
-//    public List<WebElement> findChapters() {
-//        return driver.findElements(By.xpath("//div[@class='card-body']"));
-//    }
-
-
-
-    public WebElement searchChapters() {
-        return driver.findElement(By.xpath("//*[contains(text(), 'Forms')]"));
-    }
-    public WebElement inputFirstNameField() {
-        return driver.findElement(By.xpath("//input[@id='firstName']"));
+    public void openSite(String site) {
+        driver.get(site);
     }
 
     public void sleep(int seconds) {
@@ -47,20 +35,12 @@ public class TestInit {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
 
 
 //    @AfterMethod
 //    public void close() {
 //        driver.quit();
-//    }
-    }
-//
-//    public static void main(String[] args) {
-//        FirstCase firstCase = new FirstCase();
-//        firstCase.getName();
-//        firstCase.setName("Yuliya");
-//        System.out.println(firstCase.getName());
-//
-//
 //    }
 }
